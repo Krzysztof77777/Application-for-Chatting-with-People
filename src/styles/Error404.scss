@@ -1,0 +1,26 @@
+.error {
+    text-align: center;
+    background: #7c66f1; 
+    padding: 20px 40px;
+    & > h1 {
+        color: #1d1d1d;
+        font-weight: 900;
+        font-size: 1.8rem;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.5px;
+        text-align:center;
+    }
+    & >p:nth-of-type(1) {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+    }
+    & >a {
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+        text-decoration: none;
+        transition: color 0.4s;
+        color: pink;
+    }
+}

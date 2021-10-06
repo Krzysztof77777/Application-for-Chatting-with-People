@@ -1,0 +1,224 @@
+@import "./base";
+
+@import "./typography";
+
+.registration, .login, .resetpassword, .changepassword, .verifyresetpassword {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width:500px;
+    background: #ffffff;
+    box-shadow: 0px 0px 60px 10px rgba(0,0,0,0.1);
+    padding: 0px 40px 0px 40px;
+    border-radius: 30px;
+    @media (max-width: 400px) {
+        padding: 0px 25px 0px 25px;
+    }
+    @media (max-width: 321px) {
+        padding: 0px 15px 0px 15px;
+    }
+    & > h1:nth-of-type(1) {
+        margin: 40px 0px 40px 0px;
+        color: #1d1d1d;
+        font-weight: 900;
+        font-size: 1.6rem;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+    &__form {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+        & >label {
+            margin-top:20px;
+            position:relative;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:100%;
+            max-width: 350px;
+            & >i {
+                position:absolute;
+                left: 25px;
+                top:50%;
+                transform:translate(-50%,-50%);
+                color: #6e1cea;
+                font-size: 1.1rem;
+            }
+        }
+        & >label:nth-of-type(1) {
+            margin-top: 0px;
+        }
+        & > .info {
+            margin-top:15px;
+            font-size: 0.8rem;
+            color: #f5493d;
+            letter-spacing: 0.2px;
+            text-align: center;
+        }
+        & input[type=text], input[type=password], input[type=email] {
+            font-family: "Montserrat", sans-serif;
+            background: #ffffff;
+            outline:0;
+            color: #a7b5df;
+            border: 0;
+            width:100%;
+            padding: 15px 10px 15px 50px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 40px 5px rgba(10, 82, 204, 0.15);
+            border: 1px solid #ffffff;
+        }
+        & input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder {
+            color: #a7b5df;
+        }
+        & input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+            border: 1px solid #7c66f1;
+        }
+        & input[type=submit] {
+            margin: 20px auto 20px auto;
+            background: linear-gradient(170deg, #8b2be2, #3a01f4);
+            border-radius: 30px;
+            border:0;
+            outline:0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 13px 35px;
+            max-width:250px;
+            text-transform: uppercase;
+            color: #ffffff;
+            box-shadow: 0px 0px 40px 5px rgba(10, 82, 204, 0.15);
+            cursor:pointer;
+            transition: padding 0.4s, box-shadow 0.4s;
+        }
+        & input[type=submit]:hover {
+            padding: 13px 60px;
+            box-shadow: 0px 0px 40px 5px rgba(10, 82, 204, 0.3);
+        }
+    }
+    & .resetinfo {
+        margin: 0px 0px 40px 0px;
+        font-size: 0.8rem;
+        color: #a7b5df;
+        letter-spacing: 0.2px;
+        text-align: center;
+    }
+    & .confirm {
+        margin: 10px 0px 00px 0px;
+        font-size: 0.8rem;
+        color: #a7b5df;
+        letter-spacing: 0.2px;
+        text-align: center;
+        cursor:pointer;
+        transition: color 0.4s;
+        text-decoration: none;
+        &:hover {
+            color: darken(#7c66f1,10%);
+        }
+    }
+    & > .question-about-account {
+        margin: 0px 0px 30px 0px;
+        font-size: 0.8rem;
+        color: #a7b5df;
+        letter-spacing: 0.2px;
+        text-align: center;
+        & a {
+            color: #7c66f1;
+            cursor:pointer;
+            font-weight: 600;
+            margin-left: 3px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color 0.4s;
+        }
+        & a:hover {
+            color: darken(#7c66f1,10%);
+        }
+    }
+}
+
+.form {
+    &__checked {
+        width: auto !important;
+        margin: 20px 0px 0px 0px;
+        font-size: 0.8rem;
+        color: #a7b5df;
+        letter-spacing: 0.2px;
+        pointer-events: none;
+        & label {
+            position:relative;
+            width:12px;
+            height:12px;
+            border: 1px solid #6e1cea;
+            margin-right:7px;
+            box-shadow: 0px 0px 40px 5px rgba(10, 82, 204, 0.15);
+            & i {
+                position:absolute;
+                left: 52%;
+                top:49%;
+                transform:translate(-50%,-50%);
+                font-size: 0.5rem;
+                color:#ffffff;
+            }
+        }
+        & p {
+            display:inline;
+            text-align: center;
+        }
+        & input {
+            position:absolute;
+            left:0;
+            top:50%;
+            transform: translateY(-50%);
+            width:14px;
+            height:15px;
+            opacity:0;
+            z-index:1;
+            cursor:pointer;
+            pointer-events: all;
+        }
+        & input:checked + label {
+            background: #6e1cea;
+        }
+        & a {
+            color: #7c66f1;
+            cursor:pointer;
+            margin-left: 3px;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: color 0.4s;
+            pointer-events: all;
+        }
+        & a:hover {
+            color: darken(#7c66f1,10%);
+        }
+        @media (max-width: 360px) {
+            display:flex;
+            flex-direction: column;
+            & label {
+                margin:0px 0px 5px 0px;
+            }
+            & input {
+                top:0;
+                left: 50%;
+                transform: translateX(-50%);
+                height:14px;
+            }
+        }
+    }
+}
+
+.resetpassword {
+    & h1 {
+        margin: 40px 0px 20px 0px !important;
+    }
+}
+
+.resetpassword, .changepassword, .verifyresetpassword {
+    & input[type=submit] {
+        margin: 40px 0px 40px 0px !important;
+    }
+}
